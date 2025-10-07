@@ -30,7 +30,9 @@ pip install -e .
 ### Usage
 The package provides simple, high-level functions to perform the main transformations.
 # Running Example Programs
+
 python examples/run_coordinate_test.py
+
 --- Calculated Parameters for IGRF-1990 ---
 Reference Field (B0): 30319.23 nT
 CD North Pole Co-latitude: 10.87°
@@ -45,6 +47,7 @@ ED Geographic Parameters [eta, zeta, xi]: [-0.06223097  0.04250627  0.02917504]
 ---------------------------------------------
 
 --- Coordinate Transformations for Sample Point ---
+
 Initial Geographic Point (lat=12.0°, lon=88.0°):
   (x, y, z) = [ 217.49 6228.18 1324.65]
 
@@ -60,13 +63,17 @@ Transformed back from ED to Geographic Coordinates:
 Verification: Restored geographic point matches original? -> True
 -----------------------------------------------------------------
 python examples/run_time_test.py
+
+
 Calculating geomagnetic times for Bengaluru (Lat: 12.9716, Lon: 77.5946)
 ------------------------------------------------------------
 🕒 UTC Time                 : 08:50:18
 🕒 Geographic Apparent Time : 14:12:53
 🕒 Centered Dipole Time     : 14:21:41
 🕒 Eccentric Dipole Time    : 14:22:26
+
 python examples/run_field_test.py
+
 Calculating geomagnetic field for Bengaluru (Lat: 12.9716, Lon: 77.5946)
 -----------------------------------------------------------------
 🔹 Br (nT)                  : -2633.44
@@ -74,6 +81,12 @@ Calculating geomagnetic field for Bengaluru (Lat: 12.9716, Lon: 77.5946)
 🔹 B_lambda (nT)            : -2923.01
 🔹 Dip Angle (°)            : 4.51
 🔹 Declination Angle (°)    : -174.97
+
+## References: 
+Geomagnetic coordinates, time, and field in Centered and Eccentric Dipole approximations. Ramana, K V V , Murthy, K S R N and Khan, Ibrahim, Indian Journal of Radio & Space Physics Vol. 27, February 1998, pp.35-42. http://nopr.niscpr.res.in/handle/123456789/35273
+
+
+
 
 
 
