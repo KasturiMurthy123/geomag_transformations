@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "geomag-transformations"
+version = "0.1.0"
+authors = [
+  { name="Kasturi Murthy", email="kasturi.murthy@email.com" },
+]
+description = "A package to perform coordinate and time transformations between geographic, centered dipole (CD), and eccentric dipole (ED) systems."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "numpy",
+    "pyephem",
+]

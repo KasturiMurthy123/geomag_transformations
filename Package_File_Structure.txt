@@ -1,0 +1,11 @@
+geomag_transformations/
+├── geomag_transformations/
+│   ├── __init__.py
+│   ├── parameters.py
+│   ├── coordinates.py
+│   └── times.py
+├── examples/
+│   ├── run_coordinate_test.py
+│   └── run_time_test.py
+├── pyproject.toml
+└── README.md

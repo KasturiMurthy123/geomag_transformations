@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+geomag_transformations/__init__.py
+geomag_transformations/coordinates.py
+geomag_transformations/parameters.py
+geomag_transformations/times.py
+geomag_transformations.egg-info/PKG-INFO
+geomag_transformations.egg-info/SOURCES.txt
+geomag_transformations.egg-info/dependency_links.txt
+geomag_transformations.egg-info/requires.txt
+geomag_transformations.egg-info/top_level.txt

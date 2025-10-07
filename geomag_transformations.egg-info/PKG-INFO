@@ -1,0 +1,80 @@
+Metadata-Version: 2.4
+Name: geomag-transformations
+Version: 0.1.0
+Summary: A package to perform coordinate and time transformations between geographic, centered dipole (CD), and eccentric dipole (ED) systems.
+Author-email: Kasturi Murthy <kasturi.murthy@email.com>
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Requires-Dist: pyephem
+
+# Geomagnetic Transformations Toolkit
+A Python package to perform coordinate and time transformations between geographic, Centered Dipole (CD), and Eccentric Dipole (ED) systems.
+
+The calculations are based on the methods described in the paper "Geomagnetic coordinates, time and field in centred and eccentric dipole approximations" and use the International Geomagnetic Reference Field (IGRF-1990) model coefficients.
+
+
+### Geomagnetic Transformations Toolkit
+A Python package to perform coordinate and time transformations between geographic, Centered Dipole (CD), and Eccentric Dipole (ED) systems.
+
+The calculations are based on the methods described in the paper "Geomagnetic coordinates, time and field in centred and eccentric dipole approximations" and use the International Geomagnetic Reference Field (IGRF-1990) model coefficients.
+
+### Features
+Coordinate Transformations: Convert geographic (latitude, longitude) coordinates to Centered Dipole and Eccentric Dipole Cartesian coordinates.
+
+Time Calculations: Determine the local time in the CD and ED reference frames based on a given geographic location and Universal Time (UTC).
+
+Modular Design: Cleanly separated modules for handling parameters, coordinate transformations, and time calculations.
+
+High-Precision: Leverages the PyEphem library for accurate astronomical calculations of the Sun's position, which is essential for time transformations.
+
+### Installation
+To install the package, clone the repository and install it locally using pip. It is recommended to install it in an editable (-e) mode, which allows you to modify the source code without reinstalling.
+
+git clone https://github.com/KasturiMurthy123/geomag_transformations.git
+cd geomag-transformations
+pip install -e .
+
+### Usage
+The package provides simple, high-level functions to perform the main transformations.
+
+1. Coordinate Transformation
+To transform a geographic point (e.g., 45°N, 30°E) into Centered Dipole (CD) and Eccentric Dipole (ED) coordinates:
+
+from geomag_transformations import coordinates
+
+# Define a point on the Earth's surface
+lat_deg, lon_deg = 45.0, 30.0
+
+# Perform the transformation
+results = coordinates.transform_geographic_point(lat_deg, lon_deg)
+
+print(f"--- Transformations for Lat={lat_deg}°, Lon={lon_deg}° ---")
+print(f"Geographic Coords (x, y, z):\n  {results['geo_coords'].round(2)}\n")
+print(f"Centered Dipole Coords (x', y', z'):\n  {results['cd_coords'].round(2)}\n")
+print(f"Eccentric Dipole Coords (X, Y, Z):\n  {results['ed_coords'].round(2)}")
+
+2. Geomagnetic Time Calculation
+To calculate the local times in different reference frames for a specific location (e.g., Bengaluru, India):
+from geomag_transformations import times
+
+# Define location
+bengaluru_lat = 12.9716
+bengaluru_lon = 77.5946
+
+# Calculate the times
+geo_times = times.calculate_geomagnetic_times(bengaluru_lat, bengaluru_lon)
+
+print("--- Geomagnetic Times for Bengaluru ---")
+for name, time_str in geo_times.items():
+    print(f"🕒 {name:<25}: {time_str}")
+
+This will produce an output similar to:
+
+🕒 UTC Time                   : 10:11:30
+🕒 Geographic Apparent Time   : 15:45:12
+🕒 Centered Dipole Time       : 16:07:05
+🕒 Eccentric Dipole Time      : 16:10:01
