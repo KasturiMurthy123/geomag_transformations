@@ -63,8 +63,8 @@ Transformed back from ED to Geographic Coordinates:
 Verification: Restored geographic point matches original? -> True
 -----------------------------------------------------------------
 python examples/run_time_test.py
-
-
+python examples/plot_all_geomagnetic_grids.py
+![Geomagnetic Grids Plot](assets/geomagnetic_all_grids_with_poles.png)
 Calculating geomagnetic times for Bengaluru (Lat: 12.9716, Lon: 77.5946)
 ------------------------------------------------------------
 🕒 UTC Time                 : 08:50:18
@@ -84,6 +84,7 @@ Calculating geomagnetic field for Bengaluru (Lat: 12.9716, Lon: 77.5946)
 
 ## References: 
 Geomagnetic coordinates, time, and field in Centered and Eccentric Dipole approximations. Ramana, K V V , Murthy, K S R N and Khan, Ibrahim, Indian Journal of Radio & Space Physics Vol. 27, February 1998, pp.35-42. http://nopr.niscpr.res.in/handle/123456789/35273
+
 
 
 
